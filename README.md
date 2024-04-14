@@ -1,4 +1,4 @@
-# 365Spring24SQLQuest
+# SQLQuest
 Contributors
 Liam Hyde, lihyde@calpoly.edu
 Sean Hershey, shershey@calpoly.edu
