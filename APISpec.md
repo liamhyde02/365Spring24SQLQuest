@@ -174,16 +174,19 @@ Get the shop inventory, which contains item names, prices, and how many are avai
 ]
 ```
 
-### 3.2 Character buys items - `/shop/` (POST)
+### 4.2 Character buys items - `/shop/` (POST)
 
 The request json contains a list of entries containing item names and quantities. Returns true
 if all items can be purchased and are successfully transferred to player inventory.
+
 **Request**:
-'''json
+
+```json
 {
     "item_name": "string",
     "quantity": "integer"
 }
+```
 
 **Response**:
 
