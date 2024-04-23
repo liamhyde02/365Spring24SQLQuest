@@ -67,10 +67,11 @@ Locks the characters starter items and name in place so they can start on their 
 
 The API calls are made in this sequence when equipping an item on a character:
 
-### 1.1 Get Inventory - `/inventory/{char_id}` (GET)
+### 2.1 Get Inventory - `/inventory/{char_id}` (GET)
 
 Using the character ID, open the inventory and returns a list of all items in the inventory
 Note: Items are still subject to change
+
 **Response**:
 
 ```json
@@ -82,6 +83,19 @@ Note: Items are still subject to change
         "equipped": "integer", /* 0 if item is not equipped, >0 if item is equipped. Integer determines equip conflicts*/
     }
 ]
+```
+
+### 2.2 Post Inventory - `/equip/{char_id}/{item_id}` (POST)
+
+Using the character ID and item ID, change an item's status to equipped
+Note: Logic shoud be to de-equip an item if the item is in the same slot as the item requested
+
+**Response**:
+
+```json
+{
+    "success": "boolean"
+}
 ```
 
 
