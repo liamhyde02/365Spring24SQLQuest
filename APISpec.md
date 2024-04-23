@@ -153,4 +153,43 @@ this must be done atomically, so I don't think we can separate this into 3 separ
     "success": "boolean"
 }
 ```
+## 4.  
+
+Shop api calls are made in this sequence after a quest
+
+### 4.1 Get Shop Inventory - `/shop` (GET)
+
+Get the shop inventory, which contains item names, prices, and how many are available.
+
+**Response**:
+
+```json
+[
+    {
+        "item_id": "integer",
+        "item_name": "string",
+        "quantity": "integer",
+        "price": "integer",
+    }
+]
+```
+
+### 3.2 Character buys items - `/shop/` (POST)
+
+The request json contains a list of entries containing item names and quantities. Returns true
+if all items can be purchased and are successfully transferred to player inventory.
+**Request**:
+'''json
+{
+    "item_name": "string",
+    "quantity": "integer"
+}
+
+**Response**:
+
+```json
+{
+    "success": "boolean"
+}
+```
 
