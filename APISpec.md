@@ -25,7 +25,7 @@ Creates a base character that is new for the player.
 ]
 ```
 
-### 1.2 Rename Character - `/character/1/rename` (POST)
+### 1.2 Rename Character - `/character/{char_id}/rename` (POST)
 
 Renames a character.
 
@@ -37,7 +37,7 @@ Renames a character.
 }
 ```
 
-### 1.3 Choose Starter Inventory - `/character/1/inventory` (POST)
+### 1.3 Choose Starter Inventory - `/character/{char_id}/inventory` (POST)
 
 With a shop allow starter items to be asigned to a character.
 
@@ -49,7 +49,7 @@ With a shop allow starter items to be asigned to a character.
 }
 ```
 
-### 1.4 Finilize Creation - `/character/1/create` (POST)
+### 1.4 Finilize Creation - `/character/{char_id}/create` (POST)
 
 Locks the characters starter items and name in place so they can start on their quests.
 
