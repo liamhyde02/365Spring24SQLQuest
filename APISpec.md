@@ -143,7 +143,8 @@ to allow the character to begin embarking upon the quest chosen
 ### 3.3 Character completes quest - `/quests/{char_id}/{quest_id}` (DELETE)
 
 Remove an entry from the questing table and give the character rewards.
-Note: This may need to be split into removing the questing entry, adding the gold reward, and adding the item reward
+Note: This will be removing the questing entry, adding the gold reward, and adding the item reward
+this must be done atomically, so I don't think we can separate this into 3 separate API calls
 
 **Response**:
 
