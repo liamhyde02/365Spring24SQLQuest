@@ -20,6 +20,7 @@ Creates a base character that is new for the player.
         "id": "string", /* Matching regex ^[a-zA-Z0-9_]{1,20}$ */
         "name": "string",
         "player_name": "string", /* Unique to each player */
+        "gold": "integer"
         "inventory_id": "integer", /* refrence to an inventory */
     }
 ]
