@@ -79,7 +79,7 @@ Note: Items are still subject to change
         "item_id": "string", /* Matching regex ^[a-zA-Z0-9_]{1,20}$ */
         "item_name": "string", /* Unique to each item */
         "quantity": "integer", /* Non-negative */
-        "stats": [a, b, c] /*a - strength, b - magic, c - health */
+        "equipped": "integer", /* 0 if item is not equipped, >0 if item is equipped. Integer determines equip conflicts*/
     }
 ]
 ```
