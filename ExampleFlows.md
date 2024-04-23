@@ -1,5 +1,6 @@
 Example Flows #1:
 **Player wants to equip an item and begin a quest**
+
 Rain, the adventurer, comes into town seeking to begin a quest.
 First, he must equip his trusty sword. He requests to see his inventory by calling GET /inventory/45 where 45 is his character ID
 Rain sees his health potions, armor, and most importantly he sees his trusty sword. 
