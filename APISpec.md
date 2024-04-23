@@ -65,8 +65,24 @@ Locks the characters starter items and name in place so they can start on their 
 
 ## 2.  
 
-The API calls are made in this sequence when creating a character:
-1. ``
+The API calls are made in this sequence when equipping an item on a character:
+
+### 1.1 Get Inventory - `/inventory/{char_id}` (GET)
+
+Using the character ID, open the inventory and returns a list of all items in the inventory
+Note: Items are still subject to change
+**Response**:
+
+```json
+[
+    {
+        "item_id": "string", /* Matching regex ^[a-zA-Z0-9_]{1,20}$ */
+        "item_name": "string", /* Unique to each item */
+        "quantity": "integer", /* Non-negative */
+        "stats": [a, b, c] /*a - strength, b - magic, c - health */
+    }
+]
+```
 
 
 
