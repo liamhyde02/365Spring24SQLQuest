@@ -16,5 +16,9 @@ Now off Rain goes with his trusty sword equipped to help that merchant and earn 
 Example Flows #2:
 **Player completes a quest and wants to buy a potion from a shop**
 
+Rain completes his quest and returns to town. He looks at the shop inventory by calling GET /shop, which returns a list of
+available items. Rain decides he wants to buy 3 healing potions, so he fills out a POST request with "Healing Potion", 3 and
+sends that into the shop. Rain receives 3 potions and is fully healthy for his next quest. 
+
 Example Flows #3:
 **Player creates a character, but immediately regrets the name they gave their character and seeks to change it**
