@@ -20,8 +20,9 @@ Creates a base character that is new for the player.
         "id": "string", /* Matching regex ^[a-zA-Z0-9_]{1,20}$ */
         "name": "string",
         "player_name": "string", /* Unique to each player */
-        "gold": "integer"
+        "gold": "integer",
         "inventory_id": "integer", /* refrence to an inventory */
+        "quest_id": "boolean", /* reference to if the character is currently on a quest */
     }
 ]
 ```
@@ -78,7 +79,7 @@ Note: Items are still subject to change
 ```json
 [
     {
-        "item_id": "string", /* Matching regex ^[a-zA-Z0-9_]{1,20}$ */
+        "item_id": "integer",
         "item_name": "string", /* Unique to each item */
         "quantity": "integer", /* Non-negative */
         "equipped": "integer", /* 0 if item is not equipped, >0 if item is equipped. Integer determines equip conflicts*/
@@ -104,9 +105,51 @@ Note: Logic shoud be to de-equip an item if the item is in the same slot as the 
 
 ## 3.  
 
-The API calls are made in this sequence when creating a character:
-1. ``
+The API calls are made in this sequence when sending a character on a quest:
 
+### 3.1 Get Quest Board - `/quests` (GET)
 
+Get a list of quests that the character can embark on
+Note: I am not entirely sure how to handle multiple items being given as a reward
 
+**Response**:
+
+```json
+[
+    {
+        "quest_id": "integer",
+        "quest_name": "string",
+        "quest_reward_gold": "integer",
+        "quest_item_reward_id": "integer", /* Reference to an item */
+        "quest_duration_min": "integer",
+        "quest_level_restriction": "integer",
+    }
+]
+```
+
+### 3.2 Character picks quest - `/quests/{char_id}/{quest_id}` (POST)
+
+Write an entry to a new questing table (Relation between characters and quests)
+to allow the character to begin embarking upon the quest chosen
+
+**Response**:
+
+```json
+{
+    "success": "boolean"
+}
+```
+
+### 3.3 Character completes quest - `/quests/{char_id}/{quest_id}` (DELETE)
+
+Remove an entry from the questing table and give the character rewards.
+Note: This may need to be split into removing the questing entry, adding the gold reward, and adding the item reward
+
+**Response**:
+
+```json
+{
+    "success": "boolean"
+}
+```
 
